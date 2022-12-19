@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
 /* CSS for styling the form */
 h1{
     text-align: center;
@@ -35,7 +41,7 @@ h1{
 }
 .header{min-height: 100vh;
   height: 100%;
-  background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url('.//home/job/Development/code/phase1/Phase-1-cocktails-project/svitlana-AO3YdNpVdW4-unsplash.jpg');
+  background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(./backpic.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
