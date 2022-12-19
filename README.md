@@ -27,7 +27,7 @@ press git clone https://github.com/Jobwawesh/phase-1-code-challenge-3 on your te
 ## Running the Application
 This application requires a live serve to be able to work properly
 - Run this command on your terminal to get the backend server started: `json-server --watch db.json`
-# THERE YOU GO! YOU CAN NOW ACTIVELY ENGAUGE WITH THE APPLICATION. HAVE FUN!
+# THERE YOU GO! YOU CAN NOW ACTIVELY ENGAGE WITH THE APPLICATION. HAVE FUN!
 ## Technology Used
 * HTML5
 * CSS
