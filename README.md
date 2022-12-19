@@ -1,11 +1,12 @@
 # COCKTAILS FOR YOU
 
 ## Description
+Welcome to our website dedicated to all things cocktails! Our menu features a wide selection of delicious and creative drinks to choose from. Whether you are a seasoned mixologist or just looking to try something new, we have something for everyone. We offer classic cocktails as well as innovative twists on old favorites, all made with the freshest ingredients and expertly crafted by talented mixologists. Our website is the perfect destination for those who love to explore new and exciting cocktail recipes. So come on in, browse our selection, and let us help you find your new favorite drink. Cheers!
 
 ##
 Screenshot
 
-## Development Requirements
+## Development Requirement
 - Visual StudioCode.
 - Live server extension.
 
