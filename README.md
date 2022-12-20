@@ -22,7 +22,7 @@ To get the code .
 ## project Set-up
 ### Option 1 (live link)
 If you want to see the app running in real-time directly, you can just click on this link:
-https://phase-1-code-challenge-3.vercel.app/
+https://phase-1-cocktails-project.vercel.app//
 
 ### Option 2 (Cloning the repository)
 1. Cloning the repository:
