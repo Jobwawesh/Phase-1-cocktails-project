@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   })
 
   //This function links our About tag in the navigation menu to the About page
-  abouttag.addEventListener("click", (abtEl) => {
+  abouttag.addEventListener("click", () => {
     //hide this elements
     randomDrinkRow.style.display = "none"
     mainDetails.style.display= "none";
@@ -206,5 +206,4 @@ const initCategories = () => {
 }
   initRandomDrink()
   initCategories()
-
 })
