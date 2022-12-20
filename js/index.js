@@ -3,6 +3,7 @@ const header = document.getElementById('header')
 const mainDetails = document.getElementById('main')
 const abtEl = document.getElementById('Aboutinfo')
 const abouttag = document.getElementById("abttag")
+const mainContainer = document.getElementById('main-container')
 
 
 function hideElems(){
@@ -15,7 +16,7 @@ loginForm.addEventListener("submit", function onsubmit(e) {
     e.preventDefault()
 
     hideElems();
-    
+    mainContainer.removeAttribute('hidden')
     mainDetails.style.display= "block";
     loginForm.reset()
 })
@@ -35,6 +36,10 @@ const randomDrinks = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 //2. cattegories
 const CATEGORIES = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail'
 
+//3. search
+const SEARCH = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
+
+
 
 document.addEventListener('DOMContentLoaded',()=> {
 
@@ -42,16 +47,27 @@ document.addEventListener('DOMContentLoaded',()=> {
   const randomDrinkRow = document.getElementById('main-container')
   const categoriesLink = document.getElementById('category-link')
   const drinksCategoryRow = document.getElementById('drink-category')
+  const searchForm = document.getElementById('search-form')
+  const searchRow = document.getElementById('search-result')
+  const searchInput = document.getElementById('search')
 
 
   // CLICK EVENTS FOR LINKS
   categoriesLink.addEventListener('click', () => {
-    // hide random meal
+    // hide random drink
     randomDrinkRow.style.display = "none"
-    
     // drinksCategoryRow.removeAttribute('hidden')
     drinksCategoryRow.style.display = "block"
-
+})
+  // search form submit listener
+  searchForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const query = searchInput.value
+    searchMeal(query)
+    randomDrinkRow.style.display = "none"
+    drinksCategoryRow.style.display = "none"
+    searchRow.removeAttribute('hidden')
+    searchRow.style.display = "block"
 })
 
   //create an element for the random drink
@@ -130,7 +146,48 @@ document.addEventListener('DOMContentLoaded',()=> {
     cardDiv.appendChild(categoryTitle)
 
     return cardDiv
-    
+}
+
+//search data
+const SearchDrink = (drink) => {
+  fetch(`${SEARCH}${drink}`)
+  .then((response) => response.json())
+  .then((data) =>{
+    const drinksDataList = data.drinks
+    const searchResults = drinksDataList.map(
+      drinksData => {
+        const name = drinksData.strDrinks
+        const image = drinksData.strDrinksThumb
+        console.log(name)
+        return createSearchResult(name, image)
+      }
+    )
+    searchRow.replaceChildren(...searchResults)
+  })
+}
+
+// create search result
+const createSearchResult = (name, image) => {
+  const rootDiv = document.createElement('div')
+  rootDiv.classList.add('col')
+
+  const cardDiv = document.createElement('div')
+  cardDiv.classList.add('card')
+
+  const mealImg = document.createElement('img')
+  mealImg.classList.add('card-img-top')
+  mealImg.src = image
+
+  const mealTitle = document.createElement('h4')
+  mealTitle.classList.add('p')
+  mealTitle.innerText = name
+
+  cardDiv.appendChild(mealImg)
+  cardDiv.appendChild(mealTitle)
+
+  rootDiv.appendChild(cardDiv)
+  return rootDiv
+
 }
 
 //load drink categories
