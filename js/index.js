@@ -1,53 +1,50 @@
-const loginForm = document.getElementById('login-form')
-const header = document.getElementById('header')
-const mainDetails = document.getElementById('main')
-const abtEl = document.getElementById('Aboutinfo')
-const abouttag = document.getElementById("abttag")
-const mainContainer = document.getElementById('main-container')
-
-
-function hideElems(){
-    loginForm.style.display = "none"
-    // header.style.display = 'none'
-}
-
-//This function submits our login form
-loginForm.addEventListener("submit", function onsubmit(e) {
-    e.preventDefault()
-
-    hideElems();
-    mainContainer.removeAttribute('hidden')
-    mainDetails.style.display= "block";
-    loginForm.reset()
-})
-
-//This function links our About tag in the navigation menu to the About page
-abouttag.addEventListener("click", () => {
-  abtEl.removeAttribute('hidden')
-  abtEl.style.display= "block"
-  mainDetails.style.display= "none";
-  loginForm.style.display="none"
-  hideElems();
-})
+//PHASE 1 PROJECT
 
 //Fetched URLS
-//1. Random drinks
+const search = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
 const randomDrinks = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 const categories = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail'
-const search = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
-
-
 
 document.addEventListener('DOMContentLoaded',()=> {
 
   //Data
+  const loginForm = document.getElementById('login-form')
+  const header = document.getElementById('header')
+  const mainDetails = document.getElementById('main')
+  const abtEl = document.getElementById('Aboutinfo')
+  const abouttag = document.getElementById("abttag")
+  const mainContainer = document.getElementById('main-container')
   const randomDrinkRow = document.getElementById('main-container')
   const categoriesLink = document.getElementById('category-link')
   const drinksCategoryRow = document.getElementById('drink-category')
   const searchForm = document.getElementById('search-form')
   const searchRow = document.getElementById('search-result')
   const searchInput = document.getElementById('search')
+  
+  //Function to hide elements
+  function hideElems(){
+    loginForm.style.display = "none"
+    // header.style.display = 'none'
+  }
 
+  //This function submits our login form
+  loginForm.addEventListener("submit", function onsubmit(e) {
+    e.preventDefault()
+
+    hideElems();
+    mainContainer.removeAttribute('hidden')
+    mainDetails.style.display= "block";
+    loginForm.reset()
+  })
+
+  //This function links our About tag in the navigation menu to the About page
+  abouttag.addEventListener("click", () => {
+    abtEl.removeAttribute('hidden')
+    abtEl.style.display= "block"
+    mainDetails.style.display= "none";
+    loginForm.style.display="none"
+    hideElems();
+  })
 
   // CLICK EVENTS FOR LINKS
   categoriesLink.addEventListener('click', () => {
@@ -57,7 +54,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     abtEl.style.display ="none"
     // drinksCategoryRow.removeAttribute('hidden')
     drinksCategoryRow.style.display = "block"
-})
+  })
   // search form submit listener
   searchForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -67,7 +64,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     drinksCategoryRow.style.display = "none"
     searchRow.removeAttribute('hidden')
     searchRow.style.display = "block"
-})
+  })
 
   //create an element for the random drink
   const createRandomDrink = (image, name, description) => {
@@ -112,8 +109,8 @@ document.addEventListener('DOMContentLoaded',()=> {
     //return the cardDiv
     return cardDiv
   }
-
-  const loadRandomDrink = () => {
+  //initialize Random drink
+  const initRandomDrink = () => {
     fetch(randomDrinks)
     .then((response) => response.json())
     .then((data) => {
@@ -145,7 +142,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     cardDiv.appendChild(categoryTitle)
 
     return cardDiv
-}
+  }
 
 //search data
 const SearchDrink = (drink) => {
@@ -189,8 +186,8 @@ const createSearchResult = (name, image) => {
 
 }
 
-//load drink categories
-const loadCategories = () => {
+//initialize drink categories
+const initCategories = () => {
     fetch(categories)
     .then((response) => response.json())
     .then((data) => {
@@ -201,7 +198,7 @@ const loadCategories = () => {
         drinksCategoryRow.append(...categoryElems)
     })
 }
-  loadRandomDrink()
-  loadCategories()
+  initRandomDrink()
+  initCategories()
 
 })
