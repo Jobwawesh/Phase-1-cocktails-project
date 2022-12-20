@@ -10,7 +10,7 @@ Our website is the perfect destination for those who love to explore new and exc
 
 ## Screenshot
 
-<img src="Screenshot.png">
+<img src="Screenshot.png" height="75%" width="100">
 
 ## Development Requirement
 - Visual StudioCode.
