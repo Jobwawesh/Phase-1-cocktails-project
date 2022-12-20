@@ -45,7 +45,9 @@ h1{
   background-position: center;
   background-size: cover;
   position: relative;
-
+}
+.parDiv{
+  font-size: medium;
 }
 nav{
   display: flex;

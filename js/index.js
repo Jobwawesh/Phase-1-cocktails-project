@@ -33,7 +33,7 @@ abouttag.addEventListener("click", () => {
 const randomDrinks = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 
 //2. cattegories
-const CATEGORIES = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
+const CATEGORIES = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail'
 
 
 document.addEventListener('DOMContentLoaded',()=> {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   //Data
   const randomDrinkRow = document.getElementById('main-container')
   const categoriesLink = document.getElementById('category-link')
-  const drinksCategoryRow = document.getElementById('drinks-category')
+  const drinksCategoryRow = document.getElementById('drink-category')
 
 
   // CLICK EVENTS FOR LINKS
@@ -49,18 +49,15 @@ document.addEventListener('DOMContentLoaded',()=> {
     // hide random meal
     randomDrinkRow.style.display = "none"
     
-    drinksCategoryRow.removeAttribute('hidden')
-    drinksCategoryRow.style.display = "flex"
+    // drinksCategoryRow.removeAttribute('hidden')
+    drinksCategoryRow.style.display = "block"
 
 })
-
-
-  
 
   //create an element for the random drink
   const createRandomDrink = (image, name, description) => {
     const cardDiv = document.createElement('div')
-    cardDiv.classList.add('card', 'col')
+    cardDiv.classList.add('card')
 
     const rowDiv = document.createElement('div')
     rowDiv.classList.add('row')
@@ -117,7 +114,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   //create category element
   const createCategory = (image, name) =>{
     const cardDiv = document.createElement('div')
-    cardDiv.classList.add('card', 'col-4')
+    cardDiv.classList.add('card')
 
     const categoryImg = document.createElement('img')
     cardDiv.classList.add('card-img-top')
