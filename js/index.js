@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded',()=> {
   
   //Function to hide elements
   function hideElems(){
-    loginForm.style.display = "none"
-    abtEl.style.display= "none"
+    loginForm.style.display="none"
+    abtEl.style.display="none"
 
 
     // header.style.display = 'none'
@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     e.preventDefault()
 
     hideElems();
+    abtEl.style.display = "none"
     mainContainer.removeAttribute('hidden')
     mainDetails.style.display= "block";
     loginForm.reset()
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   //This function links our About tag in the navigation menu to the About page
   abouttag.addEventListener("click", () => {
     //hide this elements
+    randomDrinkRow.style.display = "none"
     mainDetails.style.display= "none";
     loginForm.style.display="none"
     //show these elements
@@ -50,7 +52,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     abtEl.style.display= "block"
   })
 
-  // CLICK EVENTS FOR LINKS
+  // Click event for categories
   categoriesLink.addEventListener('click', () => {
     // hide random drink
     randomDrinkRow.style.display = "none"
