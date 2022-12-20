@@ -28,15 +28,16 @@ https://phase-1-cocktails-project.vercel.app//
 1. Cloning the repository:
 press git clone https://https://github.com/Jobwawesh/Phase-1-cocktails-project on your terminal
 2. Move to the folder and install requirements
-3. `cd phase-1-code-challenge-3`
+3. `cd Phase-1-cocktails-project`
 4. Open the directory with your preferd application(prefereably VScode)
 5. Right click on the index.html file and open with live server
 6. Open the application on your prefered browser
 
 ## Running the Application and Features
+### User Story
 - This Application works with fetched data from https://www.thecocktaildb.com/api.php
-- When you load the landing pange, you will be met with a form asking you to login. Enter  your credentials and press log in to get started.
-- The first tjing you will notice after loging in is that there is a cocktail drink  that pops up at random, displaying its name, image and description. This will be an occarance where every time you refresh the page another cocktail drinks pops up
+- When you load the landing page, you will be met with a form asking you to login. Enter  your credentials and press log in to get started.
+- The first thing you will notice after loging in is that there is a cocktail drink  that pops up at random, displaying its name, image and description. This will be an occarance where every time you refresh the page another cocktail drinks pops up
 - You can search through the data through categories and through a search input.
 - If you want to learn about our website, click About to be taken to a brief description.
 
