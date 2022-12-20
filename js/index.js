@@ -24,3 +24,4 @@ abouttag.addEventListener("click", () => {
   mainDetails.style.display= "none";
   hideEl();
 })
+
