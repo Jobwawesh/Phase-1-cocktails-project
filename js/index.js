@@ -26,18 +26,15 @@ abouttag.addEventListener("click", () => {
   abtEl.removeAttribute('hidden')
   abtEl.style.display= "block"
   mainDetails.style.display= "none";
+  loginForm.style.display="none"
   hideElems();
 })
 
 //Fetched URLS
 //1. Random drinks
 const randomDrinks = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
-
-//2. cattegories
-const CATEGORIES = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail'
-
-//3. search
-const SEARCH = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
+const categories = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail'
+const search = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
 
 
 
@@ -56,6 +53,8 @@ document.addEventListener('DOMContentLoaded',()=> {
   categoriesLink.addEventListener('click', () => {
     // hide random drink
     randomDrinkRow.style.display = "none"
+    categoriesLink.style.display = 'none'
+    abtEl.style.display ="none"
     // drinksCategoryRow.removeAttribute('hidden')
     drinksCategoryRow.style.display = "block"
 })
@@ -150,7 +149,7 @@ document.addEventListener('DOMContentLoaded',()=> {
 
 //search data
 const SearchDrink = (drink) => {
-  fetch(`${SEARCH}${drink}`)
+  fetch(`${search}${drink}`)
   .then((response) => response.json())
   .then((data) =>{
     const drinksDataList = data.drinks
@@ -192,7 +191,7 @@ const createSearchResult = (name, image) => {
 
 //load drink categories
 const loadCategories = () => {
-    fetch(CATEGORIES)
+    fetch(categories)
     .then((response) => response.json())
     .then((data) => {
         const categoriesData = data.drinks

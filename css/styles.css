@@ -180,3 +180,9 @@ footer.footer-content p{
   opacity: .4;
   font-weight: 200;
 }
+.Aboutinfo{
+  display:none;
+    text-align: center;
+    font-size: 30px;
+    margin: 50px 40px 40px;
+}
