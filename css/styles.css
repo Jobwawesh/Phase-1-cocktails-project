@@ -106,6 +106,15 @@ nav{
     height: 200px;
     margin: 20px auto;
   }
+  /* .card{
+    box-shadow: black;
+    height: 50px;
+    width: 70%;
+    max-width: 50;
+    display: flex;
+    text-align: center;
+    background-color: blue;
+  } */
 footer{
   position: absolute;
   bottom: 0;
