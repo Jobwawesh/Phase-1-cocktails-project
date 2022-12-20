@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded',()=> {
   //Function to hide elements
   function hideElems(){
     loginForm.style.display = "none"
+    abtEl.style.display= "none"
+
+
     // header.style.display = 'none'
   }
 
@@ -39,11 +42,12 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   //This function links our About tag in the navigation menu to the About page
   abouttag.addEventListener("click", () => {
-    abtEl.removeAttribute('hidden')
-    abtEl.style.display= "block"
+    //hide this elements
     mainDetails.style.display= "none";
     loginForm.style.display="none"
-    hideElems();
+    //show these elements
+    abtEl.removeAttribute('hidden')
+    abtEl.style.display= "block"
   })
 
   // CLICK EVENTS FOR LINKS
