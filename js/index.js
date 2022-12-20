@@ -22,9 +22,10 @@ loginForm.addEventListener("submit", function onsubmit(e) {
 
 //This function links our About tag in the navigation menu to the About page
 abouttag.addEventListener("click", () => {
+  abtEl.removeAttribute('hidden')
   abtEl.style.display= "block"
   mainDetails.style.display= "none";
-  hideEl();
+  hideElems();
 })
 
 //Fetched URLS
@@ -32,7 +33,7 @@ abouttag.addEventListener("click", () => {
 const randomDrinks = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 
 //2. cattegories
-const CATEGORIES = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail'
+const CATEGORIES = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
 
 
 document.addEventListener('DOMContentLoaded',()=> {
@@ -142,7 +143,7 @@ const loadCategories = () => {
     .then((data) => {
         const categoriesData = data.drinks
         const categoryElems  = categoriesData.map(
-            cat => createCategory(cat.strDrinkThumb, cat.strDrink)
+          cat => createCategory(cat.strDrinkThumb, cat.strDrink)
         )
         drinksCategoryRow.append(...categoryElems)
     })
@@ -151,5 +152,3 @@ const loadCategories = () => {
   loadCategories()
 
 })
-
-
