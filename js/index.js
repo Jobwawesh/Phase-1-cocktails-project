@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   searchForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const query = searchInput.value
-    searchMeal(query)
+    SearchDrink(query)
     randomDrinkRow.style.display = "none"
     drinksCategoryRow.style.display = "none"
     searchRow.removeAttribute('hidden')
