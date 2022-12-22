@@ -56,4 +56,4 @@ If you have any question or contributions, please email me at
 [jobnjunge15@gmail.com]
 
 ## Lincense
-ISC
+Mozilla Public License Version 2.0
