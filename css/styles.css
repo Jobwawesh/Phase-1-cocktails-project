@@ -8,7 +8,13 @@
 h1{
     text-align: center;
 }
-
+.signup-form{
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  display: none;
+}
 .login-form {
     width: 300px;
     margin: 0 auto;
